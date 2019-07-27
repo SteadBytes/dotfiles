@@ -1,0 +1,12 @@
+[Unit]
+Description=Lock screen with custom i3lock before suspend
+Before=sleep.target
+
+[Service]
+User=ben
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/home/ben/.local/bin/i3/lock.sh
+
+[Install]
+WantedBy=sleep.target
